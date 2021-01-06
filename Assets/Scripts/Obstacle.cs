@@ -7,7 +7,8 @@ public class Obstacle : MonoBehaviour {
     public float speed;
     public GameObject effect;
 
-	void Update () {
+	void Update () 
+    {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
 	}
 
