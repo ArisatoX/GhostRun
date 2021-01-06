@@ -7,10 +7,12 @@ public class Score : MonoBehaviour {
 
     public int score;
     public Text scoreDisplay;
+    public int limit;
 
     private void Update()
     {
-        scoreDisplay.text = score.ToString();
+        string scoreText = score.ToString() + "/" + limit;
+        scoreDisplay.text = scoreText;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
