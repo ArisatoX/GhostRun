@@ -928,7 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  ScoreText: {fileID: 0}
+  ScoreText: {fileID: 1492752045}
 --- !u!114 &1492752048
 MonoBehaviour:
   m_ObjectHideFlags: 0
