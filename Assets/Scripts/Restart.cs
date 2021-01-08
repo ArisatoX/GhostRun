@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour {
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Scenes/MainMenu");
+    }
 
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.R)){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-	}
+    public void restart()
+    {
+        SceneManager.LoadScene("Scenes/Game");
+    }
+
 }

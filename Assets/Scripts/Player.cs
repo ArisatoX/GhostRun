@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
@@ -19,15 +20,28 @@ public class Player : MonoBehaviour {
     public Text healthDisplay;
 
     public GameObject spawner;
-    public GameObject restartDisplay;
+    public GameObject ScoreManager;
+
+    public int checkScore;
 
     private void Update()
     {
 
         if (health <= 0) {
-            spawner.SetActive(false);
-            restartDisplay.SetActive(true);
-            Destroy(gameObject);
+            
+            checkScore = ScoreManager.GetComponent<Score>().score;
+            PlayerPrefs.SetInt("Score", checkScore);
+
+            if (checkScore >= 50)
+            {
+                SceneManager.LoadScene("Scenes/Win");
+            }
+            else
+            {
+                SceneManager.LoadScene("Scenes/GameOver");
+            }
+
+            
         }
 
         healthDisplay.text = health.ToString();
@@ -44,4 +58,5 @@ public class Player : MonoBehaviour {
             targetPos = new Vector2(transform.position.x, transform.position.y - increment);
         }
     }
+
 }
